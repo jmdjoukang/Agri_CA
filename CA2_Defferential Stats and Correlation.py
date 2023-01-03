@@ -26,7 +26,7 @@ from sklearn.model_selection import GridSearchCV
 
 
 #Importing Data From Excel (csv) file
-taskdata = pd.read_csv('5180081.csv')
+taskdata = pd.read_csv('datajm.csv')
 
 
 # In[3]:
@@ -191,82 +191,82 @@ wilcoxon(p,q)
 wilcoxon(j,k)
 
 
-# In[20]:
+# In[21]:
 
 
 #ANOVA to compare Ireland, Spain and Frnance with Regards to % Change in Production and Nutrient Balance
 #H0: M1=M2=M3
 #H1: M1 not equal to M2 not equal to M3
 #Import ANOVA Data
-nd = pd.read_csv('5180081_1.csv')
+nd = pd.read_csv('datajm_1.csv')
 
 
-# In[21]:
+# In[22]:
 
 
 #Viewing ANOVA Data
 nd
 
 
-# In[22]:
+# In[23]:
 
 
 #Generating BoxPlots for the ANOVA Data
 nd.boxplot('% Change in Production', by = 'Country')
 
 
-# In[23]:
+# In[24]:
 
 
 nd.boxplot('% Change in Nutrient Balance', by = 'Country')
 
 
-# In[24]:
+# In[26]:
 
 
 nd.boxplot('% Change in Labor Input', by='Country')
 
 
-# In[25]:
+# In[27]:
 
 
 #ANOVA 1: For Production
 anova = pg.anova(dv='% Change in Production', between='Country', data=nd, detailed=True) 
 
 
-# In[26]:
+# In[28]:
 
 
 anova
 
 
-# In[27]:
+# In[29]:
 
 
 #ANOVA 2: For Nutrient Balance
 anova2 = pg.anova(dv='% Change in Nutrient Balance', between='Country', data=nd, detailed=True) 
 
 
-# In[28]:
+# In[30]:
 
 
 anova2
 
 
-# In[29]:
+# In[31]:
 
 
 #ANOVA 3: For Labor Input
 anova3= pg.anova(dv='% Change in Labor Input', between='Country', data=nd, detailed=True)
 
 
-# In[30]:
+# In[32]:
 
 
 anova3
 
 
-# In[31]:
+# In[33]:
 
 
 #Correlation Matrix
